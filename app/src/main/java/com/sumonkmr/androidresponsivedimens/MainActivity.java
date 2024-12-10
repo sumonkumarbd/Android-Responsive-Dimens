@@ -1,6 +1,8 @@
 package com.sumonkmr.androidresponsivedimens;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.sumonkmr.dimens_for_android.TestDimens;
+
 public class MainActivity extends AppCompatActivity {
+
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        text = findViewById(R.id.text);
+
+        TestDimens testDimens = new TestDimens(getApplicationContext());
+        testDimens.test(text);
+
+
+
 
 
     }
